@@ -1,0 +1,431 @@
+body{
+    overflow-x: hidden;
+    box-sizing: border-box;
+    max-width: 100vw;
+}
+
+.welcome-image{
+    position: absolute;
+    object-fit: cover;
+    object-position: top;
+    max-height: calc(100vh - 100px);
+    z-index: -2;
+    width: 100vw;
+    min-height: 835px;
+}
+
+.main-content{
+    height: calc(100vh - 50px) ;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.feature-container{
+    position: absolute;
+    bottom: 0;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.featured-logo{
+    height: 200px;
+    width: 500px;
+    object-fit: cover;
+
+}
+
+.button-container{
+    display: flex;
+    gap: 10px;
+}
+
+.button-container>button{
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 30px;
+    background-color: white;
+    border: 1px solid black;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn-icon{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-bottom: 2px;
+
+}
+
+.button-container>button:hover{
+    cursor: pointer;
+    background-color: var(--alaap-red);
+    color: white;
+    border: none;
+}
+
+.button-container>button>img{
+    transition: all 0.6s;
+    z-index: 1;
+}
+
+.button-container>button:hover>img{
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(15deg) brightness(106%) contrast(104%);
+}
+
+.phone{
+    transform: scale(85%);
+
+}
+
+.button-container>button{
+    transition: all 0.6s;
+}
+
+.fine, .know{
+    color: rgb(96,96,96);
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.know{
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.down-arrow{
+    display: inline-block;
+    transform: rotate(180deg) translateY(3px);
+    font-weight: 600;
+}
+
+.main-back{
+    background-color: white;
+    filter: blur(40px);
+    position: absolute;
+    height: 345px;
+    bottom: -40px;
+    left: -100px;
+    z-index: -1;
+    right: -40px;
+}
+
+.meet-the-teachers{
+    background-color: var(--alaap-red);
+    padding: 10px;
+    min-width: 643px;
+}
+
+.meet-the-teachers > h1{
+    color: white;
+    font-size: 72px;
+    margin-bottom: 40px;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.teacher-img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: none;
+    object-fit: cover;
+}
+
+.teacher-row{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto;
+    max-width: 75vw;
+    min-width: 500px;
+}
+
+.teacher{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teacher-name{
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.teacher-desc{
+    margin-top:2px;
+    color: #F58989;
+    font-size: 18px;
+}
+
+.subjects-list{
+    display: flex;
+    gap: 10px;
+}
+
+.subjects-list > ul >li{
+
+    list-style-type: none;
+}
+
+.subjects-list > ul{
+    padding: 0;
+}
+
+.subjects-head, .bracs{
+    display: inline-block;
+    margin-bottom: 0px;
+    margin-top: 40px;
+}
+
+.subjects-head{
+    font-size: 72px;
+    margin-right: 20px;
+    margin-left: 60px;
+}
+
+.bracs{
+    font-weight: 800;
+    font-size: 32px;
+}
+
+.subjects-container{
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    box-sizing: border-box;
+    gap: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.grade-heading{
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.grade-range{
+    max-width: 300px;
+}
+
+.vr{
+    height: 180px;
+    width: 1px;
+    background-color: black;
+    margin-top: 10px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+}
+
+
+.Socials-icon{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: invert(11%) sepia(97%) saturate(4449%) hue-rotate(354deg) brightness(92%) contrast(99%);
+}
+
+.Socials-icon:hover{
+    cursor: pointer;
+}
+
+.Request{
+    font-weight: 800;
+}
+
+.socials{
+    width: 98vw;
+    padding-right: 100px;
+    display: flex;
+    justify-content: right;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.google, .facebook{
+    transform: scale(85%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1300px){
+    .teacher-img{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 855px){
+    .vr{
+        display: none;
+    }
+
+    .socials{
+        justify-content: center;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 805px){
+    .teacher-name{
+        font-size: 12px;
+    }
+
+    .teacher-desc{
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 700px){
+    .header{
+        justify-content: left;
+    }
+
+    .subjects-head{
+        font-size: 50px;
+        margin-right: 10px;
+    }
+
+    .bracs{
+        font-size: 24px;
+        margin-left: -40px;
+    }
+}
+
+@media (max-width: 425px){
+     *{
+        box-sizing: border-box;
+     }
+
+
+   .meet-the-teachers{
+        min-width: 300px;
+        padding: 0;
+   }
+
+   .main-back{
+    display: none;
+   }
+
+   .featured-logo{
+    display: none;
+   }
+
+   .socials{
+    margin-top: 10px 0;
+    padding: 0;
+    justify-content: center;
+   }
+
+   .header > h1, .header>h2{
+    margin: 0;
+   }
+
+   .header{
+    flex-direction: column;
+    justify-content: center;
+   }
+
+   .header > h1{
+    text-align: center;
+    margin-top: 20px;
+   }
+
+   .subjects-container{
+    align-items: center;
+    padding: 0px 10px ;
+    justify-content: center;
+    text-align: center;
+   }
+
+   .teacher-img{
+    width: 150px;
+    height: 150px;
+   }
+
+   .teacher-row{
+    flex-direction: column;
+    min-width: 320px;
+    gap: 10px;
+   }
+
+   .meet-the-teachers > h1{
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 30px;
+   }
+
+   .welcome-image{
+    min-width: 100vw;
+    min-height: 200px;
+    position: static;
+
+   }
+
+   .main-content{
+    position: static;
+    height: auto;
+   }
+
+   .feature-container{
+    position: static;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+   }
+
+   .know{
+    display: none;
+   }
+
+   main{
+    height: auto;
+    position: static;
+   }
+
+   .button-container{
+    flex-direction: column;
+   }
+
+   .button-container > button{
+    width: 280px;
+   }
+
+}

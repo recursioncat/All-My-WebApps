@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <title>Love Meter</title>
+    </head>
+
+    <body>
+        <div class="heading">
+            <p>The Crush Calculator</p>
+        </div>
+        <div class="main">
+            <div class="meters">
+                <div class="container">
+                    <img class="meter" src="{{ url_for('static', filename='meter.png') }}">
+                    <img class="meter-hand" id="hand" src="{{ url_for('static', filename='meter-hand.png') }}">
+                </div>
+            </div> 
+            <input class="output" type="text" name="output" id="output" readonly>
+            <form id="love-form">
+                <div class="button-containers">
+                    <input name="name1" type="text" placeholder="Enter your Name">
+                    <input name="name2" type="text" placeholder="Enter your Crush's Name">
+                </div> 
+                <button type="submit">Generate</button>
+            </form>
+        </div>
+        <p class="tag">Wanna Find out if the two of you can really make it work, use this highly scientific calculator</p>
+
+
+        <script>
+            async function sendDataToFlask() {
+                const form = document.getElementById('love-form');
+                const formData = new FormData(form);
+        
+                try {
+                    const response = await fetch('/love', {
+                        method: 'POST',
+                        body: formData
+                    });
+        
+                    if (response.ok) {
+                        const data = await response.json();
+                        const loveScore = data;
+                        var handle = document.getElementById('hand');
+                        
+                        var degree = (loveScore / 100 * 180) - 90;
+                        console.log(degree)
+                        handle.style.transform = `rotate(${degree}deg)`;
+                        var comment = "";
+                        if (loveScore<=10){
+                            comment = "Don't Even Try";
+                        }
+                        else if (loveScore<=35){
+                            comment = "Eh!, Not worth it Bro!"
+                        }
+                        else if (loveScore<=65){
+                            comment = "Beware Steep Climb Ahead!"
+                        }
+                        else if (loveScore<=90){
+                            comment = "Go for it Bro!"
+                        }
+                        else{
+                            comment = "Ofcourse! Everybody Wants You!!!"
+                        }
+
+                        var result = document.getElementById('output');
+
+                        result.value = loveScore+"%"+" "+comment;
+                    } else {
+                        console.error('An error occurred');
+                    }
+                } catch (error) {
+                    console.error('An error occurred:', error);
+                }
+            }
+        
+            const form = document.getElementById('love-form');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                sendDataToFlask();
+            });
+        </script>
+    </body>
+</html>

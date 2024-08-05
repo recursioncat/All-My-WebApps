@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alaap: Gallery</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='Alap Logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='gallery.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}">
+    <script src="{{ url_for('static', filename='Scripts/nav.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/8677a1a9c2.js" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='Scripts/reroute.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='Scripts/video-Player.js') }}" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <img draggable="false" class="alaap-logo" src="{{ url_for('static', filename='Alap Logo.png') }}">
+        </div>
+        <div class="right">
+            <p onclick="reroute('home')" class="menu-item">Home</p>
+            <p onclick="reroute('contact')" class="menu-item">Contact</p>
+            <button onclick="openMenu()" id="menu">Menu</button>
+        </div>
+        <div class="nav-background"></div>
+        <div class="nav-menu">
+            <div class="heading">
+                <i onclick="closeMenu()" class="fa-solid fa-x"></i>
+                <h1>Navigation Menu</h1>
+            </div>
+            <hr>
+            <div>
+                <li onclick="reroute('home')" class="menu-item">Home</li>
+                <hr>
+                <li onclick="reroute('contact')" class="menu-item">Contact</li>
+                <hr>
+            </div>
+            <div>
+                <p>Make a Website Like this, Contact <a href="#">Rishit Chakraborty</a></p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header close-area">
+        <h1>Gallery</h1> 
+        <p>The gallery provides snippets of Alaap, the events, the fun and the family. Check out videos of children studying and enjoying below.</p>
+    </div>
+
+    <main class="close-area">
+        <button onclick="moveBackward()" class="video-change">&lt;</button>
+        <div class="video-player paused">
+            <video id="main-vid" src="{{ url_for('static', filename='Videos/Classical Training.mp4') }}"></video>
+            <div class="controls">
+                <div class="play-pause">
+                    <img class="play-btn" src="{{ url_for('static', filename='play.svg') }}">
+                    <img src="{{ url_for('static', filename='pause.svg') }}" class="pause-btn">
+                </div>
+                <input value="0" type="range" min="0" max="100" class="progress-bar">
+                <p class="time"></p>
+            </div>
+            <div class="title">
+                <p>Training in Classical with the Kids <span>2024</span></p>
+            </div>
+        </div>
+        <button onclick="moveForward()" class="video-change">&gt;</button>
+    </main>
+
+    <div class="phone-section close-area">
+        {% for i in range(list_of_paths|length) %}
+        <div class="video-section" onclick="playVideo(this)">
+            <div class="overlay">
+                <p>{{ videolist[i]['name'] }} <span>{{ videolist[i]['year'] }}</span></p>
+            </div>
+            <video src="{{ list_of_paths[i] }}" id="thumbnail"></video>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        const videos = JSON.parse('{{ videolist|tojson|safe }}');
+        const listOfPath = JSON.parse('{{ list_of_paths|tojson|safe }}');
+    </script>
+    <script src="{{ url_for('static', filename='Scripts/gallery.js') }}" defer></script>
+
+</body>
+</html>

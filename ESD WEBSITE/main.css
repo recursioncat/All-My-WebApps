@@ -1,0 +1,253 @@
+body{
+    background-color:rgb(32, 27, 25);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+p, h1, h2{
+    color: white;
+    font-family: 'Raleway';
+}
+
+
+.welcome-slide{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0%;
+    }
+
+    100%{
+        opacity: 100%;
+    }
+}
+
+
+
+
+.logo{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0px;
+    opacity: 0;
+    animation: appear 2s  1s ease forwards;
+}
+
+.name{
+    font-family: 'Raleway';
+    font-size: 36;
+    font-weight: 500;
+    color: white;
+    margin-top: -28px;
+    opacity: 0;
+    margin-bottom: 0px;
+    animation: appear 2s  1.5s ease forwards;
+}
+
+.tagline{
+    color: rgb(126, 126, 126);
+    font-family: 'Raleway';
+    font-size: 18px;
+    opacity: 0;
+    margin-top: 5px;
+    animation: appear 2s  2s ease forwards;
+}
+
+.background{
+    background-image: radial-gradient(black 1%, rgb(32, 27, 25) 99%);
+    filter: blur(40px);
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -200;
+    opacity: 0;
+    animation: appearandgrow 2s  1s ease forwards;
+}
+
+@keyframes appearandgrow{
+    0%{
+        opacity: 0%;
+        height: 0px;
+        width: 0px;
+    }
+
+    100%{
+        opacity: 100%;
+        height: 400px;
+        width: 400px;
+    }
+}
+
+
+.down-arrow{
+    text-align: center;
+    transform: rotate(180deg);
+    font-size: 20px;
+    color: rgb(131, 130, 130);
+    margin: 0;
+}
+
+.knowmore{
+    position: absolute;
+    bottom: 10px;
+    opacity: 0;
+    animation: appear 2s  2.5s ease forwards;
+}
+
+.knowmore:hover{
+    cursor: pointer;
+}
+
+
+.knowmore p{
+    margin: 0;
+    transition: all 0.6s;
+}
+
+.knowmore p:hover{
+    transform: scale(110%);
+}
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+section{
+    margin: 30px 20px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1033px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+section.in-view {
+    opacity: 1;
+}
+
+video{
+    width: 480px;
+    height: 270px;
+    object-fit: contain;
+}
+
+.usepipe{
+    text-align: center;
+    margin-top: 70px;
+    font-size: 90px;
+}
+
+
+
+.fandl{
+    text-align: center;
+    color: white;
+    font-family: 'Raleway';
+    font-size: 40px;
+    margin-bottom: 0px;
+
+}
+
+.prob1{
+    flex: 1;
+}
+
+.prob2{
+    flex:1;
+}
+
+.vert-line{
+    width:1px ;
+    height: 130px;
+    background-color: rgb(122, 122, 122);
+}
+
+.no_anim{
+    animation: none;
+    opacity: 100%;
+}
+
+.mono{
+    max-width: 1033px;
+    margin-top: -50px;
+}
+
+.mono1{
+    max-width: 1033px;
+}
+
+button{
+    color: white;
+    background-color: rgb(32, 27, 25) ;
+    padding: 5px 10px;
+    font-size: 20px;
+    border:1px solid white;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+button:hover{
+    background-color: rgb(185, 4, 4);
+    border: 1px solid rgb(32, 27, 25);
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(185, 4, 4);
+    font-weight: bold;
+}
+
+.image-container{
+    display: flex;
+    width: 1033px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+
+}
+
+.image-container.in-view{
+    opacity: 100%;
+}
+
+.we{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.image-container div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alil{
+    margin-top: 50px;
+    margin-bottom: 05px;
+}

@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alaap: Contacts</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='Alap Logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contacts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}">
+    <script src="{{ url_for('static', filename='Scripts/reroute.js') }}"></script>
+    <script src="{{ url_for('static', filename='Scripts/checkbox.js') }}"></script>
+    <script src="{{ url_for('static', filename='Scripts/nav.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/8677a1a9c2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <img draggable="false" class="alaap-logo" src="{{ url_for('static', filename='Alap Logo.png') }}">
+        </div>
+        <div class="right">
+            <p onclick="reroute('home')" class="menu-item">Home</p>
+            <p onclick="reroute('gallery')" class="menu-item">Gallery</p>
+            <button onclick="openMenu()" id="menu">Menu</button>
+        </div>
+        <div class="nav-background"></div>
+        <div class="nav-menu">
+            <div class="heading">
+                <i onclick="closeMenu()" class="fa-solid fa-x"></i>
+                <h1>Navigation Menu</h1>
+            </div>
+            <hr>
+            <div>
+                <li onclick="reroute('home')" class="menu-item">Home</li>
+                <hr>
+                <li onclick="reroute('gallery')" class="menu-item">Gallery</li>
+                <hr>
+            </div>
+            <div>
+                <p>Make a Website Like this, Contact <a href="#">Rishit Chakraborty</a></p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-area close-area">
+        <h1 class="page-name">Contact Us</h1>
+        <main>
+            <div class="address-side">
+                <div class="contact-unit">
+                    <h2 class="contact-heading">Address</h2>
+                    <p class="contact-details">95B Kankulia Road, Kolkata: 700029 (Ballygunge)</p>
+                </div>
+    
+                <div class="contact-unit">
+                    <h2 class="contact-heading">Landmark</h2>
+                    <p class="contact-details">Near Ghosh Medical</p>
+                </div>
+    
+                <div class="contact-unit">
+                    <h2 class="contact-heading">Email</h2>
+                    <p class="contact-details">labonibanerjee99@gmail.com</p>
+                </div>
+    
+                <div class="contact-unit">
+                    <h2 class="contact-heading">Phone Number</h2>
+                    <p class="contact-details">+91 97488 52765  (Laboni Banerjee) <br>
+                        +91 86974 00463 (Indrani Banerjee)
+                        </p>
+                </div>
+            </div>
+
+            <div class="Query-Side">
+                <div class="contact-unit">
+                    <h2 class="contact-heading">Send US a Query</h2>
+                    <p class="contact-details">This Query will be sent as a mail to the owners, and you will receive an answer via mail/call as soon as possible</p>
+                    <form action="/process_query" method="POST">
+                        <label>Name</label>
+                        <input name="Name" type="text">
+                        <div class="phoneandemail">
+                            <div>
+                                <label>Phone Number</label>
+                                <input name="phone-number" type="text">
+                            </div>
+                            <div>
+                                <label>Email</label>
+                                <input name="email" type="text">
+                            </div>
+                        </div>
+                        <label>Query</label>
+                        <textarea name="query"></textarea>
+
+                        <div class="send-options">
+                            <div>
+                                <p class="reply-heading">Preffered Form of Reply</p> 
+                                <div class="check-item-container">
+                                    <input onchange="decheckRest(this)" name="email-call" type="checkbox">
+                                    <p>E-Mail</p>
+                                </div>
+                                <div class="check-item-container">
+                                    <input onchange="decheckRest(this)" name="phone-call" type="checkbox">
+                                    <p>Phone-Call</p>
+                                </div>
+                            </div>
+
+                            <button class="submit-btn" type="submit">SEND</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <script>
+                    alert(`{{ message }}`);
+                </script>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

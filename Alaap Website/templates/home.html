@@ -1,0 +1,171 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alaap: Home</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='Alap Logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}">
+    <script src="{{ url_for('static', filename='Scripts/reroute.js') }}"></script>
+    <script src="{{ url_for('static', filename='Scripts/nav.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/8677a1a9c2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <img draggable="false" class="alaap-logo" src="{{ url_for('static', filename='Alap Logo.png') }}">
+        </div>
+        <div class="right">
+            <p onclick="reroute('contact')" class="menu-item">Contact</p>
+            <p onclick="reroute('gallery')" class="menu-item">Gallery</p>
+            <button onclick="openMenu()" id="menu">Menu</button>
+        </div>
+        <div class="nav-background"></div>
+        <div class="nav-menu">
+            <div class="heading">
+                <i onclick="closeMenu()" class="fa-solid fa-x"></i>
+                <h1>Navigation Menu</h1>
+            </div>
+            <hr>
+            <div>
+                <li onclick="reroute('contact')" class="menu-item">Contact</li>
+                <hr>
+                <li onclick="reroute('gallery')" class="menu-item">Gallery</li>
+                <hr>
+            </div>
+            <div>
+                <p>Make a Website Like this, Contact <a href="#">Rishit Chakraborty</a></p>
+            </div>
+        </div>
+    </nav>
+
+    <main class="close-area">
+        <div class="main-content">
+            <img draggable="false" src="{{ url_for('static', filename='featureimg.jpg') }}" class="welcome-image">
+            <div class="feature-container">
+                <img draggable="false" class="featured-logo" src="{{ url_for('static', filename='Alap Logo.png') }}">
+                <div class="button-container">
+                    <button onclick="reroute('contact')">
+                        <image  class="btn-icon phone" src="{{ url_for('static', filename='phone-solid.svg' )}}"></image>
+                        Contact
+                    </button>
+                    <button onclick="reroute('contact')">
+                        <image class="btn-icon" src="{{ url_for('static', filename='comments-regular.svg' )}}"></image>
+                        Query
+                    </button>
+                </div>
+                <p class="fine">Finest Music Lessons and Tutoring in Town</p>
+                <p onclick="Scroll()" class="know">Know More <span class="down-arrow">^</span></p>
+            </div>
+        </div>
+    </main>
+    
+    <div class="main-back close-area"></div>
+
+    <div class="meet-the-teachers close-area">
+        <h1>Meet Our Teachers</h1>
+        <div class="teacher-row">
+            <div class="teacher">
+                <img draggable="false" class="teacher-img" src="{{ url_for('static', filename='Laboni-Teacher.jpg') }}" alt="{{ url_for('static', filename = 'Unknown_person.jpg') }}">
+                <p class="teacher-name">Laboni Banerjee</p>
+                <p class="teacher-desc">Primary, Psychology, Music</p>
+            </div>
+
+            <div class="teacher">
+                <img draggable="false" class="teacher-img" src="{{ url_for('static', filename='indrani-banerjee.jpg') }}" alt="{{ url_for('static', filename = 'Unknown_person.jpg') }}">
+                <p class="teacher-name">Indrani Banerjee</p>
+                <p class="teacher-desc">Nursery</p>
+            </div>
+
+            <div class="teacher">
+                <img draggable="false" class="teacher-img" src="{{ url_for('static', filename='Rishit-teacher.jpg') }}" alt="{{ url_for('static', filename = 'Unknown_person.jpg') }}">
+                <p class="teacher-name">Rishit Chakraborty</p>
+                <p class="teacher-desc">Computer Science</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="subjects close-area">
+        <div class="header">
+            <h1 class="subjects-head">Subjects Offered</h1>
+            <h2 class="bracs">(CBSE, ICSE & WBSCE)</h2>
+        </div>
+        <div class="subjects-container">
+            <div class="grade-range">
+                <h2 class="grade-heading">Nursery to Class 8</h2>
+                <div class="subjects-list">
+                    <ul>
+                        <li>Mathamatics</li>
+                        <li>Science/EVS</li>
+                        <li>English</li>
+                        <li>Bengali</li>
+                        <li>History</li>
+                        <li>Geography</li>
+                        <li>Political Science</li>
+                    </ul>
+
+                    <ul>
+                        <li>Economics</li>
+                        <li>Chemistry</li>
+                        <li>Physics</li>
+                        <li>Biology</li>
+                        <li>General Knowledge</li>
+                        <li>Computer Science</li>
+                        <li>Commerce</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="vr"></div>
+
+            <div class="grade-range">
+                <h2 class="grade-heading">Class 9 and 10</h2>
+                <div class="subjects-list">
+                    <ul>
+                        <li>English</li>
+                        <li>Bengali</li>
+                        <li>History</li>
+                        <li>Geography</li>
+                        <li>Political Science</li>
+                        <li>Computer Science</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vr"></div>
+
+
+            <div class="grade-range">
+                <h2 class="grade-heading">+2 and Graduation</h2>
+                <div class="subjects-list">
+                    <ul>
+                        <li>Psychology</li>
+                        <li>Education</li>
+                        <li>English (+2 only)</li>
+                        <li>Bengali (+2 only)</li>
+                        <li>Computer Science (+2 only)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vr"></div>
+
+            <div class="grade-range">
+                <h2 class="grade-heading">Music</h2>
+                <div class="subjects-list">
+                    <p>Vocals Rabindra Sangeet and Classical(All ages)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="socials close-area">
+        <p class="Request">Find us on... </p>
+        <image class="Socials-icon" src="{{ url_for('static', filename='youtube-brands-solid.svg' )}}">
+        <image class="Socials-icon google" src="{{ url_for('static', filename='google-brands-solid.svg' )}}">
+        <a href="https://www.facebook.com/profile.php?id=61551861372213"><image class="Socials-icon facebook" src="{{ url_for('static', filename='facebook-brands-solid.svg')}}"></image></a>
+    </div>
+</body>
+</html>

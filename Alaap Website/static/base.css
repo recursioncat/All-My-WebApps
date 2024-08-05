@@ -1,0 +1,9 @@
+:root {
+    --alaap-red: #C11113;
+    --font-family: 'Raleway', 'Arial';
+}
+
+body{
+    margin: 0px;
+    padding:0px;
+}
