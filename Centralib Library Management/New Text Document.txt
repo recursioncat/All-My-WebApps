@@ -1,6 +1,0 @@
-> Skin Loading Animation Before DOM content Loaded.     x
-> Fix The Search Bar SQL Vulnerability.                 x
-> Custom Fullscreen Mode                                x
-> Sockets to give Page Warnings (Apparently Not for this use case because of redirects)  - - - 
-> Session Alerts Carrying Over to other pages 
-> Map Shortcuts to buttons                              x      
